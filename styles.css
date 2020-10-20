@@ -1,0 +1,23 @@
+html {
+    background-color: darkgray;
+}
+
+ol{
+    
+}
+
+li{
+    margin: 5px;
+    width: 600px;
+}
+
+li:hover {
+    background-color: dimgray;
+    width: 600px;
+}
+
+img {
+    margin: 10px;
+    width: 45%;
+    height: 45%;
+}
