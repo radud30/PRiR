@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<sys/types.h>
+#include<stdlib.h>
+#include<math.h>
+
+float Lebniz(float x){
+	float wynik = 0;
+	float liczba = 0;
+	int i;
+
+	for(i =0;i<=x; i++){
+		liczba = powf(-1.0,i) / (2*i+1);
+		wynik += liczba;
+	}
+	return (wynik *4);
+}
+
+main(){
+	int p;
+	int j;
+	printf("Podaj ilosc procesow:");
+	scanf("%d",&p);
+	for(j=0; j<p+1;j++){
+		if(fork()!=0){
+			srand(time(NULL)^(getpid()));
+			int N = rand()%4900+100;
+			printf("N=%d pi=%f \n",N,Lebniz(N));
+			exit(0);
+		}
+	}
+	return 0;
+}
