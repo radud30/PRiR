@@ -36,7 +36,7 @@ int main(int argc, char **argv){
 			MPI_Send(&suma, 1, MPI_DOUBLE, p - 1, tag, MPI_COMM_WORLD);
 		}
 		else {
-			suma += (funkcja(a) + funkcja(b)) / 2;
+			suma = suma + (funkcja(a) + funkcja(b)) / 2;
 			printf("Przyblizona wartosc calki: %f \n", suma);
 		}
 	}
